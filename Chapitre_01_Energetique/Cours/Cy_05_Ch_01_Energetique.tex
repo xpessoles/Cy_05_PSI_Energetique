@@ -32,7 +32,7 @@
 \def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement en utilisant les méthodes énergétiques.}
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Énergétique}
+\def\xxchapitre{\hspace{.12cm} Approche énergétique}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
@@ -44,7 +44,7 @@
 \def\xxauteur{\textsl{Émilien Durif \\ Xavier Pessoles}}
 
 \def\xxcompetences{%
-\textsl{%
+\footnotesize\textsl{%
 \textbf{Savoirs et compétences :}\\
 \begin{itemize}[label=\ding{112},font=\color{ocre}] 
 \item Mod2.C18.SF1 : Déterminer l’énergie cinétique d’un solide, ou d’un ensemble de solides, dans son mouvement par rapport à un autre solide.
@@ -56,7 +56,8 @@
 \item Mod1.C5.SF2 : Déterminer la puissance des actions mécaniques extérieures à un solide ou à un ensemble de solides, dans son mouvement rapport à un autre solide.
 \item Mod1.C5.SF3 : Déterminer la puissance des actions mécaniques intérieures à un ensemble de solides.
 \end{itemize}
-}}
+}
+\normalsize}
 		
 \def\xxfigures{
 %\includegraphics[width=4cm]{images/fig_01}\\
@@ -68,7 +69,7 @@
 }%figues de la page de garde
 
 \def\xxpied{%
-Cycle 05 -- Modéliser le comportement des systèmes mécaniques -- Approche énergétique \\% afin de valider leurs performances.\\
+Cycle 05 -- Modéliser les systèmes mécaniques -- Approche énergétique \\% afin de valider leurs performances.\\
 Chapitre 1 -- \xxactivite%
 }
 
@@ -117,13 +118,13 @@ On appellera \textbf{puissance galiléenne}, la puissance d'un ensemble matérie
 %\boxed{
 $
 \mathcal{P}(\text{ext} \rightarrow E/R_g)
-$
+$.
 %}
 %\end{align}
 \end{rem}%
 
 
-\begin{warn}[Dimension et homogénéité]
+\begin{warn}\textbf{Dimensions et homogénéité.}
 \begin{itemize}
 \item Une puissance est une \textbf{grandeur scalaire} s'exprimant en $Watt$.
 \item Elle est homogène à un produit entre un effort et une vitesse et peut donc s'exprimer en unité SI en $\text{Nms}^{-1}$.
@@ -137,7 +138,7 @@ On considère un ensemble matériel $E$ composé de $n$ solides $S_i$.
 
 Dans la pratique pour calculer la puissance totale des actions mécaniques s'appliquant sur $E$ dans son mouvement par rapport à $R$ il faut sommer toutes les puissances s'appliquant sur les $S_i$ venant de l'extérieur de $E$ :
 $$
-\mathcal{P}(\text{ext} \rightarrow E/R)=\displaystyle{\sum_{\forall S_i \in E}\mathcal{P}(\text{ext} \rightarrow S_i/R)}
+\mathcal{P}(\text{ext} \rightarrow E/R)=\displaystyle{\sum_{\forall S_i \in E}\mathcal{P}(\text{ext} \rightarrow S_i/R)}.
 $$
 \end{prop}
 
@@ -186,7 +187,7 @@ On veillera bien, pour effectuer le \textbf{comoment} de deux torseurs, à les a
 $
 \mathcal{P}(\text{ext} \rightarrow S/R)=\overrightarrow{R}_{\text{ext}\rightarrow S}\cdot \overrightarrow{V}(A,S/R) \;
 \forall A.
-$.
+$
 
 \item Lorsque le torseur des actions mécaniques est un torseur couple alors la puissance est donnée par
 $
@@ -279,16 +280,13 @@ $$
 On dit que le \textbf{travail est conservatif} (noté $\displaystyle{{W_c}^{t_2}_{t_1}}(\text{ext} \rightarrow E/R)$) s'il est indépendant du chemin suivi pour passer de l'état initial (instant $t_1$) à l'état final (instant $t_2$).
 Dans ce cas là il existe une grandeur appelée énergie potentielle de l'action mécanique extérieure à $E$ dans son mouvement par rapport à $R$ qui vérifie :
 $$
-\dd W_c(\text{ext} \rightarrow E/R)=-\dd E_p(\text{ext} \rightarrow E/R).
-$$
-avec 
-
-$$
+\dd W_c(\text{ext} \rightarrow E/R)=-\dd E_p(\text{ext} \rightarrow E/R) \quad
+\text{avec}
+\quad
 \dd W_c(\text{ext} \rightarrow E/R)=\mathcal{P}(\text{ext} \rightarrow E/R)\;\dd t.
 $$
 
 On peut également l'écrire sous la forme :
-
 $$
 \mathcal{P}(\text{ext} \rightarrow E/R)=-\frac{\dd E_p(\text{ext} \rightarrow E/R)}{\dd t}.
 $$
@@ -319,18 +317,24 @@ Où $z_G$ correspond à la position du centre de gravité $G$ de $S$ suivant la 
 \subsubsection{Énergie potentielle associée à un ressort}
 
 \begin{defi}[Énergie potentielle associée à un ressort]
+~\\
+
+\begin{minipage}[c]{.65\linewidth}
 L'\textbf{énergie potentielle associée à l'action d'un ressort} $r$ de raideur $K$ et de longueur à vide $L_0$ situé entre deux solides $S_1$ et $S_2$ dans son mouvement par rapport à $R$ est donnée par :
 
 $$
-E_p(r \rightarrow S_1,S_2/R)=\frac{K}{2}(L-L_0)^2+k.
+E_p(r \rightarrow S_1,S_2/R)=\frac{K}{2}(L-L_0)^2+k \quad \text{où }k\text{ est une constante}.
 $$
-Où $k$ est une constante.
-
+\end{minipage} 
+\hfill
+\begin{minipage}[c]{.3\linewidth}
+\begin{center}
+\includegraphics[width=\linewidth]{images/ressort.pdf}
+\end{center}
+\end{minipage}
 \end{defi}
 
-\begin{center}
-\includegraphics[width=.5\textwidth]{images/ressort.pdf}
-\end{center}
+
 
 \section{Énergie cinétique}
 \subsection{Définition}
@@ -338,7 +342,7 @@ Où $k$ est une constante.
 On définit \textbf{l'énergie cinétique} $E_c$ d'un système matériel $S$ en mouvement dans un référentiel $R_0$ comme la somme des carrés de la vitesse en chaque point courant $P$ de $S$ pondéré de la masse élémentaire :
 
 $$
-E_c(S/R_0)=\frac{1}{2}\displaystyle{\int_{P\in S}} \left(\overrightarrow{V}(P/R_0)\right)^2\;\dd m
+E_c(S/R_0)=\frac{1}{2}\displaystyle{\int_{P\in S}} \left(\overrightarrow{V}(P/R_0)\right)^2\;\dd m.
 $$
 
 \end{defi}
@@ -363,7 +367,7 @@ $$
 E_c(S/R_0)=\frac{1}{2}M\;\left(\overrightarrow{V}(G\in S/R_0)\right)^2.
 $$
 
-\item Solide $S$ de moment d'inertie $I_{Oz}(S)$ en mouvement de rotation par rapport à l'\textbf{axe fixe} $\couple{O}{\overrightarrow{z}}$ par rapport $R_0$ :
+\item Solide $S$ de moment d'inertie $I_{Oz}(S)$ en mouvement de rotation par rapport à l'\textbf{axe fixe} $\couple{O}{{z}}$ par rapport $R_0$ :
 
 $$
 E_c(S/R_0)=\frac{1}{2}I_{Oz}(S)\left(\overrightarrow{\Omega}(S/R_0)\right)^2.
@@ -380,11 +384,11 @@ $$
 Lorsqu'un problème ne comporte qu'un seul degré de liberté et pour simplifier les calculs, on peut exprimer l'énergie cinétique galiléenne d'un ensemble $E$ composé de $n$ solides $S_i$ en fonction d'un seul paramètre cinématique.
 On peut alors écrire $E_c(E/R_g)$ 
 \begin{itemize}
-\item avec \textbf{son inertie équivalente $J_{\text{eq}}(E)$} (en $kg\cdot m^2$) rapportée à un paramètre de rotation $\dot{\theta}(t)$ : 
+\item avec \textbf{son inertie équivalente $J_{\text{eq}}(E)$} (en $\text{kg m}^2$) rapportée à un paramètre de rotation $\dot{\theta}(t)$ : 
 $$
 E_c(E/R_g)=\frac{1}{2}J_{\text{eq}}(E)\cdot \dot{\theta}^2.
 $$
-\item avec \textbf{sa masse équivalente $M_{\text{eq}}(E)$} (en $kg$) rapportée à un paramètre de translation $\dot{x}(t)$ : 
+\item avec \textbf{sa masse équivalente $M_{\text{eq}}(E)$} (en $\text{kg}$) rapportée à un paramètre de translation $\dot{x}(t)$ : 
 $$
 E_c(E/R_g)=\frac{1}{2}M_{\text{eq}}(E)\cdot \dot{x}^2.
 $$
@@ -419,7 +423,7 @@ $$
 $$
 Avec :
 \begin{itemize}
-\item $\mathcal{P}_{\text{int}}(E)$ la puissance intérieur à $E$ qui est nul s'il n'y a pas d'apport d'énergie interne ni de dissipation (liaisons parfaites).
+\item $\mathcal{P}_{\text{int}}(E)$ la puissance intérieur à $E$ qui est nul s'il n'y a pas d'apport d'énergie interne ni de dissipation (liaisons parfaites);
 \item $\mathcal{P}(\text{ext}\rightarrow E/R_g)$, la puissance galiléenne de $E$ dans son mouvement par rapport à $R_g$.
 \end{itemize}
 
@@ -438,13 +442,12 @@ Avec :
 \subsection{Définition du rendement d'une chaîne fonctionnelle}
 
 Une étude dynamique d'une chaîne fonctionnelle peut se décomposer en deux parties :
-
 \begin{itemize}
-\item En \textbf{régime permanent} (variation d'énergie cinétique négligeable): étude des effets dissipatifs pour estimer une puissance nominale des actionneurs.
-\item En \textbf{régime transitoire} : évaluation du complément de puissance pour permettre au système de fonctionner.
+\item en \textbf{régime permanent} (variation d'énergie cinétique négligeable): étude des effets dissipatifs pour estimer une puissance nominale des actionneurs;
+\item en \textbf{régime transitoire} : évaluation du complément de puissance pour permettre au système de fonctionner.
 \end{itemize} 
 
-\begin{defi}[rendement d'une chaîne fonctionnelle]
+\begin{defi}[Rendement d'une chaîne fonctionnelle]
 Le rendement se définit \textbf{en régime permanent} comme la puissance utile sur la puissance d'entrée d'une chaîne fonctionnelle : 
 
 $$
@@ -462,7 +465,7 @@ $$
 Le \textbf{rendement global} d'une chaîne d'énergie comportant $n$ éléments de rendements $\eta_i$ est donné par : 
 
 $$
-\displaystyle{\eta=\prod_{i=1}^n\eta_i\leq 1}
+\displaystyle{\eta=\prod_{i=1}^n\eta_i\leq 1}.
 $$
 
 Chacun des rendements successifs $\eta_i$ étant au plus égale à 1, le rendement global est nécessairement inférieur ou égal au plus mauvais rendement.
@@ -473,7 +476,7 @@ Chacun des rendements successifs $\eta_i$ étant au plus égale à 1, le rendeme
 \begin{prop}[Estimation des dissipations]
 On peut évaluer en régime permanent les pertes ou puissance dissipée à partir de la connaissance du rendement $\eta$ : 
 
-$$\mathcal{P}(\text{dissipée})=(1-\eta)\cdot \mathcal{P}(\text{entrée})
+$$\mathcal{P}(\text{dissipée})=(1-\eta)\cdot \mathcal{P}(\text{entrée}).
 $$
 
 
