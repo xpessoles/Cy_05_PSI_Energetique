@@ -107,7 +107,7 @@ On s'intéresse ici à la modélisation d'un seul axe (selon la direction notée
 \item les solides seront supposés indéformables ; 
 \item on notera $J_1$ le moment d'inertie du solide 1 (composé d'une vis à billes et de l'arbre moteur) selon l'axe $\couple{O_0}{{y_0}}$ : $J_1=I_{\couple{O_0}{{y_0}}}(S_1)$ ;
 \item on note $M_3$ et $G_3$ respectivement la masse et le centre d'inertie du solide $S_3$ ;
-\item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=y\cdot \overrightarrow{y}_0+z\cdot \overrightarrow{z}_0$
+\item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=y\cdot \overrightarrow{y_0}+z\cdot \overrightarrow{z_0}$
 \item les liaisons sont supposées parfaites (sans jeu ni frottement) sauf la glissière entre $S_0$ et $S_3$ (Coefficient de frottement noté $\mu$) et la pivot entre $S_0$ et $S_1$ (couple résistant noté $C_r$);
 \item seul l'action de pesanteur sur $S_3$ sera supposée non négligeable.
 \end{itemize}
@@ -199,13 +199,13 @@ $=C_m\cdot \dot{\theta}(t)$.
 \item $\mathcal{P}(S_0 \rightarrow S_3/R_0)$=
 $
 \mathcal{P}(S_0 \rightarrow S_3/R_0)=\torseurstat{T}{S_0}{S_3}\otimes \torseurcin{V}{S_3}{R_0}$
-$=\torseurl{X_{03}\cdot \overrightarrow{x_0}\pm Y_{03}\cdot \overrightarrow{y_0}+Z_{03}\cdot \overrightarrow{z_0}}{L_{03}\cdot \overrightarrow{x_0} + M_{03}\cdot \overrightarrow{y}_0+N_{03}\cdot \overrightarrow{z_0}}{-}
+$=\torseurl{X_{03}\cdot \overrightarrow{x_0}\pm Y_{03}\cdot \overrightarrow{y_0}+Z_{03}\cdot \overrightarrow{z_0}}{L_{03}\cdot \overrightarrow{x_0} + M_{03}\cdot \overrightarrow{y_0}+N_{03}\cdot \overrightarrow{z_0}}{-}
 \otimes
 \torseurl{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}{-}$
 $=\pm Y_{03}\cdot \dot{y}(t)$.
 \item $\mathcal{P}(\text{Poids} \rightarrow S_3/R_0)$ : 
 $\mathcal{P}(S_0 \rightarrow S_3/R_0)$ $=\torseurstat{T}{\text{pes}}{S_3}\otimes \torseurcin{V}{S_3}{R_0}
-$ $=\torseur{\overrightarrow{0}}{-M_3\cdot g\cdot \overrightarrow{z_0}}l{G_3}
+$ $=\torseurl{G_3}{\overrightarrow{0}}{-M_3\cdot g\cdot \overrightarrow{z_0}}
 \otimes
 \torseurl{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}{G_3}=0$.
 \end{itemize}
@@ -218,55 +218,40 @@ $$\mathcal{P}(\text{ext}\rightarrow E/R_0)=\left(C_m\pm C_r\right)\cdot \dot{\th
 \subparagraph{}\textit{Calculer l'ensemble des puissances des actions mutuelles dans les liaisons pour l'ensemble $E$ : $\mathcal{P}_{\text{int}}(E)$.}
 \ifprof\begin{corrige}
 \begin{itemize}
-\item D'après le graphe des liaisons : 
-
-\begin{align*}
-\mathcal{P}_{\text{int}}(E)=\mathcal{P}(S_1 \leftrightarrow S_2)+\mathcal{P}(S_2 \leftrightarrow S_3)
-\end{align*}
-\item Calcul de $\mathcal{P}(S_1 \leftrightarrow S_2)$ : 
-
-\begin{align*}
-\mathcal{P}(S_1 \leftrightarrow S_2)=
-\torseurstat{T}{S_1}{S_2}\otimes \torseurcin{V}{S_2}{S_1}
-=\torseurl{O_0}{X_{12}\overrightarrow{x}_0+Y_{12}\overrightarrow{y}_0+Z_{12}\overrightarrow{z_0}}{L_{12}\overrightarrow{x}_0+M_{12}\overrightarrow{y}_0+N_{12}\overrightarrow{z_0}}
+\item D'après le graphe des liaisons : $
+\mathcal{P}_{\text{int}}(E)=\mathcal{P}(S_1 \leftrightarrow S_2)+\mathcal{P}(S_2 \leftrightarrow S_3)$.
+\item Calcul de $\mathcal{P}(S_1 \leftrightarrow S_2)=
+\mathcal{P}(S_1 \leftrightarrow S_2)$ 
+$=\torseurstat{T}{S_1}{S_2}\otimes \torseurcin{V}{S_2}{S_1}$
+$=\torseurl{X_{12}\overrightarrow{x_0}+Y_{12}\overrightarrow{y_0}+Z_{12}\overrightarrow{z_0}}{L_{12}\overrightarrow{x_0}+M_{12}\overrightarrow{y_0}+N_{12}\overrightarrow{z_0}}{O_0}
 \otimes
-\torseurl{O_0}{q_{21}\overrightarrow{y_0}}{v_{12}\cdot \overrightarrow{y_0}}\\
-=Y_{12}\cdot v_{12}+q_{21}\cdot M_{12}
-\end{align*}
-
-Or,
-
-\begin{align*}
+\torseurl{q_{21}\overrightarrow{y_0}}{v_{12}\cdot \overrightarrow{y_0}}{O_0}$
+$=Y_{12}\cdot v_{12}+q_{21}\cdot M_{12}$.
+Or,$
 \left\{
 \begin{array}{c}
 M_{12}=-\frac{p}{2\pi}Y_{12}\\
-\\
 v_{12}=\frac{p}{2\pi}q_{21}
 \end{array}
 \right.
-\end{align*}
-
+$. 
 D'où : 
-\begin{align*}
+$
 \mathcal{P}(S_1 \leftrightarrow S_2)
 =Y_{12}\cdot v_{12}+q_{21}\cdot M_{12}=\frac{p}{2\pi}\left[Y_{12}\cdot q_{21}-q_{21}\cdot Y_{12}\right]=0
-\end{align*}
+$.
 
-\item Calcul de $\mathcal{P}(S_2 \leftrightarrow S_3)$ : 
-
-\begin{align*}
-\mathcal{P}(S_2 \leftrightarrow S_3)=
-\torseurstat{T}{S_2}{S_3}\otimes \torseurcin{V}{S_3}{S_2}
-=\torseurl{A}{X_{23}\overrightarrow{x}_0+Y_{23}\overrightarrow{y_0}}{\overrightarrow{0}}
+\item Calcul de $\mathcal{P}(S_2 \leftrightarrow S_3=$
+$
+\torseurstat{T}{S_2}{S_3}\otimes \torseurcin{V}{S_3}{S_2}$
+$=\torseurl{A}{X_{23}\overrightarrow{x}_0+Y_{23}\overrightarrow{y_0}}{\overrightarrow{0}}
 \otimes
 \torseurl{A}{p_{32}\overrightarrow{x}_0+q_{32}\overrightarrow{y}_0+r_{32}\overrightarrow{z_0}}{w_{32}\cdot \overrightarrow{z_0}}\\
-=0
-\end{align*}
-\item On en déduit donc : 
+=0$.
 
-\begin{align*}
-\mathcal{P}_{\text{int}}(E)=0
-\end{align*}
+\item On en déduit donc : 
+$
+\mathcal{P}_{\text{int}}(E)=0$.
 \end{itemize}
 
 \end{corrige}\else\fi
@@ -282,37 +267,27 @@ E_c(E/R_0)=E_c(1/R_0)+E_c(2/R_0)+E_c(3/R_0)
 $$
 
 \item Énergie cinétique de 1 dans son mouvement par rapport à $R_0$ :
-$$E_c(1/R_0)
-%=\dfrac{1}{2}
+$E_c(1/R_0)
+=\dfrac{1}{2}
 \torseurci{1}{R_0}
-\otimes \torseurcin{V}{1}{R_0}
-=\torseurl{\overrightarrow{*}}{\overline{\overline{I}}_{O_0}(S_1)\cdot \dot{\theta}(t)\overrightarrow{y_0}}{O_0}\otimes
- \torseurl{\dot{\theta}(t)\overrightarrow{y_0}}{\overrightarrow{0}}{O_0}\\
- =\frac{1}{2}\left[\dot{\theta}^2\overline{\overline{I}}_{O_0}(S_1)\cdot \overrightarrow{y}_0\cdot \overrightarrow{y}_0\right]=\frac{1}{2}J_1\cdot \dot{\theta}^2=\frac{1}{2}\left(I_m+I_v\right)\cdot \dot{\theta}^2
-$$
+\otimes \torseurcin{V}{1}{R_0}$
+$=\frac{1}{2}\torseurl{\overrightarrow{*}}{\overline{\overline{I}}_{O_0}(S_1)\cdot \dot{\theta}(t)\overrightarrow{y_0}}{O_0}\otimes
+ \torseurl{\dot{\theta}(t)\overrightarrow{y_0}}{\overrightarrow{0}}{O_0}$
+$=\frac{1}{2}\left[\dot{\theta}^2\overline{\overline{I}}_{O_0}(S_1)\cdot \overrightarrow{y}_0\cdot \overrightarrow{y}_0\right]$
+$=\frac{1}{2}J_1\cdot \dot{\theta}^2=\frac{1}{2}\left(I_m+I_v\right)\cdot \dot{\theta}^2$.
 
-\item Énergie cinétique de 2 dans son mouvement par rapport à $R_0$ : 
-
-\begin{align*}
+\item Énergie cinétique de 2 dans son mouvement par rapport à $R_0$ : $
 E_c(2/R_0)=\frac{1}{2}\torseurci{2}{R_0}\otimes \torseurcin{V}{2}{R_0}
-=0
-\end{align*}
+=0$
 car l'inertie de 2 est négligeable.
  
-\item Énergie cinétique de 3 dans son mouvement par rapport à $R_0$ :
-
-\begin{align*}
+\item Énergie cinétique de 3 dans son mouvement par rapport à $R_0$ :$
 E_c(3/R_0)=\frac{1}{2}\torseurci{3}{R_0}\otimes \torseurcin{V}{3}{R_0}
 =\torseurl{-}{M_3\cdot \dot{y}(t)\cdot \overrightarrow{y_0}}{\overrightarrow{0}}\otimes
- \torseurl{-}{\overrightarrow{0}}{\dot{y}(t)\cdot\overrightarrow{y_0}}\\
- =\frac{1}{2}M_3\cdot \dot{y}^2(t)
-\end{align*}
+ \torseurl{-}{\overrightarrow{0}}{\dot{y}(t)\cdot\overrightarrow{y_0}}$ $ =\frac{1}{2}M_3\cdot \dot{y}^2(t)$.
  
 \item L'énergie cinétique galiléenne de l'ensemble $E$ :
-
-\begin{align*}
-E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]
-\end{align*}
+$E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]$.
 \end{itemize}
 \end{corrige}\else\fi
 
@@ -327,40 +302,29 @@ Ici la mobilité vaut 1.
 \subparagraph{}\textit{Déterminer une relation entre les paramètres cinématiques du problème.}
 
 \ifprof\begin{corrige}
-Par une fermeture cinématique on pourrait montrer : 
-
-\begin{align*}
+Par une fermeture cinématique on pourrait montrer : $
 \dot{y}(t)=-\frac{p}{2\pi}\dot{\theta}(t).
-\end{align*}
+$
 \end{corrige}\else\fi
 
 \subparagraph{}\textit{Déterminer l'inertie équivalente de $E$ ramenée à la rotation autour de l'axe $\couple{O_0}{{y_0}}$ et du paramètre $\dot{\theta}(t)$.}
 
 \ifprof\begin{corrige}
-\begin{align*}
-E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]
-=\frac{1}{2}\left[\left(I_m+I_v\right)+ M_3\cdot \left(\frac{p}{2\pi}\right)^2\right]\cdot \dot{\theta}^2(t)
-\end{align*}
-
+$E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]
+=\frac{1}{2}\left[\left(I_m+I_v\right)+ M_3\cdot \left(\frac{p}{2\pi}\right)^2\right]\cdot \dot{\theta}^2(t)$
 d'où,
-
-\begin{align*}
-J_{eq}(E)=\left(I_m+I_v\right)+ M_3\cdot \left(\frac{p}{2\pi}\right)^2
-\end{align*}
-\end{corrige}\else\fi
+$
+J_{\text{eq}}(E)=\left(I_m+I_v\right)+ M_3\cdot \left(\frac{p}{2\pi}\right)^2$. \end{corrige}\else\fi
 
 \subparagraph{}\textit{Déterminer la masse équivalente de $E$ ramené à la translation selon la direction $\overrightarrow{y_0}$ et du paramètre $\dot{y}(t)$.}
 \ifprof\begin{corrige}
-\begin{align*}
-E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]
-=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \left(\frac{2\pi}{p}\right)^2+ M_3\right]\cdot \dot{y}^2(t)
-\end{align*}
-
+$E_c(E/R_0)=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \dot{\theta}^2(t)+ M_3\cdot \dot{y}^2(t)\right]
+=\frac{1}{2}\left[\left(I_m+I_v\right)\cdot \left(\frac{2\pi}{p}\right)^2+ M_3\right]\cdot \dot{y}^2(t)$
 d'où,
+$
+M_{\text{eq}}(E)=\left(I_m+I_v\right)\cdot \left(\frac{2\pi}{p}\right)^2+ M_3
+$.
 
-\begin{align*}
-M_{eq}(E)=\left(I_m+I_v\right)\cdot \left(\frac{2\pi}{p}\right)^2+ M_3
-\end{align*}
 \end{corrige}\else\fi
 
 
@@ -368,16 +332,12 @@ M_{eq}(E)=\left(I_m+I_v\right)\cdot \left(\frac{2\pi}{p}\right)^2+ M_3
 
 \ifprof\begin{corrige}
 En combinant les résultats des différentes questions précédentes, on obtient : 
-
-\begin{align*}
-M_{eq}\cdot \dot{y}(t)\cdot \ddot{y}(t)=\left(C_m\pm C_r\right)\cdot \dot{\theta}(t)\pm Y_{03}\cdot \dot{y}(t)+0
-\end{align*}
+$M_{\text{eq}}\cdot \dot{y}(t)\cdot \ddot{y}(t)=\left(C_m\pm C_r\right)\cdot \dot{\theta}(t)\pm Y_{03}\cdot \dot{y}(t)+0
+$.
 
 On peut postuler un sens de déplacement : $\dot{y}(t)>0$, ainsi $\dot{\theta}=-\frac{2\pi}{p}\dot{y}(t)<0$,  $C_r>0$, $Y_{03}<0$ : 
-
-\begin{align*}
-M_{eq}\cdot \dot{y}(t)\cdot \ddot{y}(t)=\left[-\left(C_m+ C_r\right)\cdot \frac{2\pi}{p}+ Y_{03}\right]\cdot \dot{y}(t)
-\end{align*}
+$
+M_{\text{eq}}\cdot \dot{y}(t)\cdot \ddot{y}(t)=\left[-\left(C_m+ C_r\right)\cdot \frac{2\pi}{p}+ Y_{03}\right]\cdot \dot{y}(t)$
 \end{corrige}\else\fi
 
 
@@ -385,33 +345,25 @@ M_{eq}\cdot \dot{y}(t)\cdot \ddot{y}(t)=\left[-\left(C_m+ C_r\right)\cdot \frac{
 \subparagraph{}\textit{Déterminer des équations supplémentaires issues des théorèmes généraux pour déterminer l'équation de mouvement du système permettant de relier $C_m$ à $y(t)$.}
 
 \ifprof\begin{corrige}
-Il faut éliminer le paramètre $Y_{03}$. Pour cela on peut écrire le théorème de la résultante dynamique appliqué à $S_3$ en projection selon $\overrightarrow{z}_0$ : 
-
-\begin{align*}
-Z_{03}-M_3\cdot g=0
-\end{align*}
+Il faut éliminer le paramètre $Y_{03}$. Pour cela on peut écrire le théorème de la résultante dynamique appliqué à $S_3$ en projection selon $\overrightarrow{z_0}$ : 
+$Z_{03}-M_3\cdot g=0$.
 
 Or la loi de Coulomb donne (avec $Z_{03}>0$ et $Y_{03}<0$) : 
-
-\begin{align*}
-Y_{03}=-\mu\cdot Z_{03}=-\mu\cdot M_3\cdot g
-\end{align*}
+$Y_{03}=-\mu\cdot Z_{03}=-\mu\cdot M_3\cdot g$.
 
 Ainsi l'équation de mouvement obtenue est (en éliminant $\dot{y}(t)\neq 0$): 
-
-\begin{align*}
+$
 \boxed{
-M_{eq}\cdot \ddot{y}(t)=-\left(C_m+ C_r\right)\cdot \frac{2\pi}{p}- \mu\cdot M_3\cdot g
-}
-\end{align*}
+M_{\text{eq}}\cdot \ddot{y}(t)=-\left(C_m+ C_r\right)\cdot \frac{2\pi}{p}- \mu\cdot M_3\cdot g
+}$. 
 \end{corrige}\else\fi
 
 \subparagraph{}\textit{Déterminer le couple moteur à fournir dans le cas le plus défavorable (accélération maximale).}
 
 \ifprof\begin{corrige}
 \begin{align*}
-C_m=-\frac{p}{2\pi}\left[M_{eq}\ddot{y}_{max}+M_3\cdot g\cdot \mu\right]-C_r
-=-\frac{p}{2\pi}M_3\left(\ddot{y}_{max}+g\cdot \mu\right)-\left(I_m+I_v\right)\frac{2\pi}{p}\ddot{y}_{max}-C_r
+C_m=-\frac{p}{2\pi}\left[M_{\text{eq}}\ddot{y}_{\text{max}}+M_3\cdot g\cdot \mu\right]-C_r
+=-\frac{p}{2\pi}M_3\left(\ddot{y}_{\text{max}}+g\cdot \mu\right)-\left(I_m+I_v\right)\frac{2\pi}{p}\ddot{y}_{\text{max}}-C_r
 \end{align*}
 
 L'application numérique donne  : $C_m=-3,79N\cdot m$
@@ -426,7 +378,7 @@ On cherche à déterminer en régime permanent les pertes au niveaux de la liais
 
 \ifprof\begin{corrige}
 \begin{align*}
-\eta=\frac{\mathcal{P}(utile)}{\mathcal{P}(entrée)}=\frac{\mathcal{P}(S_2\to S_3/R_0)}{\mathcal{P}(moteur\to S_1/R_0)}
+\eta=\frac{\mathcal{P}(\text{utile})}{\mathcal{P}(\text{entrée})}=\frac{\mathcal{P}(S_2\to S_3/R_0)}{\mathcal{P}(\text{moteur}\to S_1/R_0)}
 \end{align*}
 \end{corrige}\else\fi
 
@@ -471,10 +423,10 @@ On donne :
 \subparagraph{}\textit{Déterminer dans ces conditions les dissipations.}
 
 \ifprof\begin{corrige}
-\begin{align*}
-\mathcal{P}(dissipée)=C_{max}\cdot \dot{\theta}_{max}\cdot \left(\eta-1\right)\\
+$
+\mathcal{P}(\text{dissipée})=C_{\text{max}}\cdot \dot{\theta}_{\text{max}}\cdot \left(\eta-1\right)
 =21,2\times6000\frac{2\pi}{60}\cdot \left(1-\eta\right)=\SI{2664}{W}
-\end{align*}
+$
 \end{corrige}\else\fi
 
 
