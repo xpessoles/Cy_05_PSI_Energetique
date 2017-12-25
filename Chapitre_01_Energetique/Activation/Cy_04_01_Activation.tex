@@ -92,7 +92,7 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -160,7 +160,7 @@ L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du
 
 On considère l'ensemble $E=\left\{S_1+S_2+S_3\right\}$.
 
-\subparagraph{}\textit{Construire le graph des liaisons modélisant le système entier.}
+\subparagraph{}\textit{Construire le graphe des liaisons modélisant le système entier.}
 
 \ifprof\begin{corrige}
 \begin{center}
@@ -179,57 +179,38 @@ On considère l'ensemble $E=\left\{S_1+S_2+S_3\right\}$.
 
 \subparagraph{}\textit{Calculer $\mathcal{P}(\text{ext}\rightarrow E/R_0)$ en fonction des données du problème.}
 \ifprof\begin{corrige}
-\begin{align*}
+On a : 
+$$
 \mathcal{P}(\text{ext}\rightarrow E/R_g)=\mathcal{P}(S_0 \rightarrow S_1/R_0)+\mathcal{P}(\text{Moteur}\rightarrow S_1/R_0)
-+\mathcal{P}(S_0 \rightarrow S_3/R_0)+\mathcal{P}(poids \rightarrow S_3/R_0)
-\end{align*}
++\mathcal{P}(S_0 \rightarrow S_3/R_0)+\mathcal{P}(\text{poids} \rightarrow S_3/R_0)
+$$ 
 \begin{itemize}
-\item $\mathcal{P}(S_0 \rightarrow S_1/R_0)$ : 
-
-\begin{align*}
-\mathcal{P}(S_0 \rightarrow S_1/R_0)=\torseurstat{T}{S_0}{S_1}\otimes \torseurcin{V}{S_1}{R_0}
-=\torseurl{O_0}{X_{01}\cdot \overrightarrow{x_0}+Y_{01}\cdot \overrightarrow{y_0}+Z_{01}\cdot \overrightarrow{z_0}}{L_{01}\cdot \overrightarrow{x_0} \pm C_r\cdot \overrightarrow{y_0}+N_{01}\cdot \overrightarrow{z_0}}
+\item $\mathcal{P}(S_0 \rightarrow S_1/R_0)=\torseurstat{T}{S_0}{S_1}\otimes \torseurcin{V}{S_1}{R_0}$
+$=\torseurl{X_{01}\cdot \overrightarrow{x_0}+Y_{01}\cdot \overrightarrow{y_0}+Z_{01}\cdot \overrightarrow{z_0}}{L_{01}\cdot \overrightarrow{x_0} \pm C_r\cdot \overrightarrow{y_0}+N_{01}\cdot \overrightarrow{z_0}}{O_0}
 \otimes
-\torseurl{O_0}{\dot{\theta}(t)\cdot \overrightarrow{y_0}}{\overrightarrow{0}}\\
-=\pm C_r\cdot \dot{\theta}(t)
-\end{align*}
-
-Le signe de la composante suivant $\overrightarrow{y_0}$ dépendra du sens du mouvement de $S_1/S_0$
-\item $\mathcal{P}(\text{Moteur} \rightarrow S_1/R_0)$ : 
-
-\begin{align*}
-\mathcal{P}(S_0 \rightarrow S_1/R_0)=\torseurstat{T}{\text{Moteur}}{S_1}\otimes \torseurcin{V}{S_1}{R_0}
-=\torseurl{-}{\overrightarrow{0}}{C_m\cdot \overrightarrow{y_0}}
+\torseurl{\dot{\theta}(t)\cdot \overrightarrow{y_0}}{\overrightarrow{0}}{O_0}$
+$=\pm C_r\cdot \dot{\theta}(t)$. 
+Le signe de la composante suivant $\overrightarrow{y_0}$ dépendra du sens du mouvement de $S_1/S_0$.
+\item $\mathcal{P}(\text{Moteur} \rightarrow S_1/R_0)$ $=\torseurstat{T}{\text{Moteur}}{S_1}\otimes \torseurcin{V}{S_1}{R_0}$
+$=\torseurl{\overrightarrow{0}}{C_m\cdot \overrightarrow{y_0}}{-}
 \otimes
-\torseurl{O_0}{\dot{\theta}(t)\cdot \overrightarrow{y_0}}{\overrightarrow{0}}\\
-=C_m\cdot \dot{\theta}(t)
-\end{align*}
-
-\item $\mathcal{P}(S_0 \rightarrow S_3/R_0)$ : 
-
-\begin{align*}
-\mathcal{P}(S_0 \rightarrow S_3/R_0)=\torseurstat{T}{S_0}{S_3}\otimes \torseurcin{V}{S_3}{R_0}
-=\torseurl{-}{X_{03}\cdot \overrightarrow{x}_0\pm Y_{03}\cdot \overrightarrow{y}_0+Z_{03}\cdot \overrightarrow{z_0}}{L_{03}\cdot \overrightarrow{x}_0 + M_{03}\cdot \overrightarrow{y}_0+N_{03}\cdot \overrightarrow{z_0}}
+\torseur{\dot{\theta}(t)\cdot \overrightarrow{y_0}}{\overrightarrow{0}}{O_0}$
+$=C_m\cdot \dot{\theta}(t)$.
+\item $\mathcal{P}(S_0 \rightarrow S_3/R_0)$=
+$
+\mathcal{P}(S_0 \rightarrow S_3/R_0)=\torseurstat{T}{S_0}{S_3}\otimes \torseurcin{V}{S_3}{R_0}$
+$=\torseurl{X_{03}\cdot \overrightarrow{x_0}\pm Y_{03}\cdot \overrightarrow{y_0}+Z_{03}\cdot \overrightarrow{z_0}}{L_{03}\cdot \overrightarrow{x_0} + M_{03}\cdot \overrightarrow{y}_0+N_{03}\cdot \overrightarrow{z_0}}{-}
 \otimes
-\torseurl{-}{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}\\
-=\pm Y_{03}\cdot \dot{y}(t)
-\end{align*}
-
-\item $\mathcal{P}(poids \rightarrow S_3/R_0)$ : 
-
-\begin{align*}
-\mathcal{P}(S_0 \rightarrow S_3/R_0)=\torseurstat{T}{\text{pes}}{S_3}\otimes \torseurcin{V}{S_3}{R_0}
-=\torseurl{G_3}{\overrightarrow{0}}{-M_3\cdot g\cdot \overrightarrow{z_0}}
+\torseurl{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}{-}$
+$=\pm Y_{03}\cdot \dot{y}(t)$.
+\item $\mathcal{P}(\text{Poids} \rightarrow S_3/R_0)$ : 
+$\mathcal{P}(S_0 \rightarrow S_3/R_0)$ $=\torseurstat{T}{\text{pes}}{S_3}\otimes \torseurcin{V}{S_3}{R_0}
+$ $=\torseur{\overrightarrow{0}}{-M_3\cdot g\cdot \overrightarrow{z_0}}l{G_3}
 \otimes
-\torseurl{G_3}{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}\\
-=0
-\end{align*}
+\torseurl{\overrightarrow{0}}{\dot{y}(t)\cdot \overrightarrow{y_0}}{G_3}=0$.
 \end{itemize}
-\item $\mathcal{P}(\text{ext}\rightarrow E/R_0)$ : 
 
-\begin{align*}
-\mathcal{P}(\text{ext} \rightarrow E/R_0)=\left(C_m\pm C_r\right)\cdot \dot{\theta}(t)\pm Y_{03}\cdot \dot{y}(t)
-\end{align*}
+$$\mathcal{P}(\text{ext}\rightarrow E/R_0)=\left(C_m\pm C_r\right)\cdot \dot{\theta}(t)\pm Y_{03}\cdot \dot{y}(t)$$
 \end{corrige}\else\fi
 
 
@@ -500,7 +481,7 @@ On donne :
 
 
 \ifprof
-\end{multicols}
+%\end{multicols}
 \else
 \end{multicols}
 \fi
