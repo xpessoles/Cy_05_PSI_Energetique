@@ -127,9 +127,9 @@ $.
 
 \begin{warn}\textbf{Dimensions et homogénéité.}
 \begin{itemize}
-\item Une puissance est une \textbf{grandeur scalaire} s'exprimant en $Watt$.
+\item Une puissance est une \textbf{grandeur scalaire} s'exprimant en \textit{Watt}.
 \item Elle est homogène à un produit entre un effort et une vitesse et peut donc s'exprimer en unité SI en $\text{Nms}^{-1}$.
-\item Historiquement on a utilisé longtemps les << chevaux >> ou << cheval vapeur >> ($\SI{1}{cV}= \SI{736}{W}$).
+\item Historiquement on a utilisé longtemps les << chevaux >> ou << cheval vapeur >> ($\SI{1}{ch}= \SI{736}{W}$).
 \end{itemize}
 
 \end{warn}
@@ -179,21 +179,28 @@ $$
 
 
 \begin{warn}
-On veillera bien, pour effectuer le \textbf{comoment} de deux torseurs, à les avoir exprimé au préalable \underline{\textbf{en un même point.}}
+On veillera bien, pour effectuer le \textbf{comoment} de deux torseurs, à les avoir exprimé au préalable {\textbf{en un même point.}}
 \end{warn}
 
 \begin{rem}%[Cas particuliers]
 \begin{itemize}
+\item Le comoment des torseurs est défini par 
+$\torseurstat{T}{\text{ext}}{S}\otimes \torseurcin{V}{S}{R}$
+$=
+\torseurl{\vectf{\text{ext}}{S}}{\vectm{P}{\text{ext}}{S}}{P}
+\otimes \torseurl{\vecto{S}{R}}{\vectv{P}{S}{R}}{P}$ 
+$=\vectf{\text{ext}}{S}\cdot \vectv{P}{S}{R}+ \vectm{P}{\text{ext}}{S}\cdot\vecto{S}{R}$.
+
 \item Lorsque le torseur cinématique de $S/R$ est un couple (mouvement de translation) alors en tout point $A$ la puissance est alors donnée par
 $
-\mathcal{P}(\text{ext} \rightarrow S/R)=\overrightarrow{R}_{\text{ext}\rightarrow S}\cdot \overrightarrow{V}(A,S/R) \;
-\forall A.
+\mathcal{P}(\text{ext} \rightarrow S/R)=\vectf{\text{ext}}{S}\cdot \vectv{P}{S}{R} \;
+\forall P.
 $
 
 \item Lorsque le torseur des actions mécaniques est un torseur couple alors la puissance est donnée par
 $
-\mathcal{P}(\text{ext} \rightarrow S/R)=\overrightarrow{M}_A(\text{ext}\rightarrow S)\cdot \overrightarrow{\Omega}(S/R)\;
-\forall A.
+\mathcal{P}(\text{ext} \rightarrow S/R)=\vectm{P}{\text{ext}}{S}\cdot\vecto{S}{R}\;
+\forall P.
 $
 
 \end{itemize}
@@ -340,10 +347,10 @@ $$
 \section{Énergie cinétique}
 \subsection{Définition}
 \begin{defi}[Énergie cinétique]
-On définit \textbf{l'énergie cinétique} $E_c$ d'un système matériel $S$ en mouvement dans un référentiel $R_0$ comme la somme des carrés de la vitesse en chaque point courant $P$ de $S$ pondéré de la masse élémentaire :
+On définit \textbf{l'énergie cinétique} $E_c$ d'un système matériel $S$ en mouvement dans un référentiel $R$ comme la somme des carrés de la vitesse en chaque point courant $P$ de $S$ pondéré de la masse élémentaire :
 
 $$
-E_c(S/R_0)=\frac{1}{2}\displaystyle{\int_{P\in S}} \left(\overrightarrow{V}(P/R_0)\right)^2\;\dd m.
+E_c(S/R)=\frac{1}{2}\displaystyle{\int_{P\in S}} \left(\overrightarrow{V}(P/R)\right)^2\;\dd m.
 $$
 
 \end{defi}
@@ -352,7 +359,7 @@ $$
 
 \begin{prop}[Expression avec les comoments]
 L'énergie cinétique peut s'exprimer comme le comoment du torseur cinématique et du torseur cinétique :
-$$E_c(S/R_0)=\frac{1}{2}\torseurcin{V}{S}{R_0}\otimes \torseurci{S}{R_0}.
+$$E_c(S/R)=\frac{1}{2}\torseurcin{V}{S}{R}\otimes \torseurci{S}{R}.
 $$
 \end{prop}
 
@@ -363,15 +370,15 @@ Il faudra bien veiller à ce que chacun des torseurs soit exprimé en un même p
 \begin{prop}[Cas particuliers] ~\\
 
 \begin{itemize}
-\item Solide $S$ de masse $M$ de centre d'inertie $G$ en mouvement de \textbf{translation} par rapport à $R_0$ :
+\item Solide $S$ de masse $M$ de centre d'inertie $G$ en mouvement de \textbf{translation} par rapport à $R$ :
 $$
-E_c(S/R_0)=\frac{1}{2}M\;\left(\overrightarrow{V}(G\in S/R_0)\right)^2.
+E_c(S/R_0)=\frac{1}{2}M \; \vectv{G}{S}{R}^2.
 $$
 
-\item Solide $S$ de moment d'inertie $I_{Oz}(S)$ en mouvement de rotation par rapport à l'\textbf{axe fixe} $\couple{O}{{z}}$ par rapport $R_0$ :
+\item Solide $S$ de moment d'inertie $I_{Oz}(S)$ en mouvement de rotation par rapport à l'\textbf{axe fixe} $\couple{O}{{z}}$ par rapport $R$ :
 
 $$
-E_c(S/R_0)=\frac{1}{2}I_{Oz}(S)\left(\overrightarrow{\Omega}(S/R_0)\right)^2.
+E_c(S/R)=\frac{1}{2}I_{Oz}(S)\; \vecto{S}{R}^2.
 $$
 
 \end{itemize}
@@ -383,15 +390,15 @@ $$
 
 \begin{defi}[Énergie cinétique équivalente]
 Lorsqu'un problème ne comporte qu'un seul degré de liberté et pour simplifier les calculs, on peut exprimer l'énergie cinétique galiléenne d'un ensemble $E$ composé de $n$ solides $S_i$ en fonction d'un seul paramètre cinématique.
-On peut alors écrire $E_c(E/R_g)$ 
+On peut alors écrire $E_c(E/R)$ 
 \begin{itemize}
 \item avec \textbf{son inertie équivalente $J_{\text{eq}}(E)$} (en $\text{kg m}^2$) rapportée à un paramètre de rotation $\dot{\theta}(t)$ : 
 $$
-E_c(E/R_g)=\frac{1}{2}J_{\text{eq}}(E)\cdot \dot{\theta}^2.
+E_c(E/R_g)=\frac{1}{2}J_{\text{eq}}(E) \dot{\theta}^2.
 $$
 \item avec \textbf{sa masse équivalente $M_{\text{eq}}(E)$} (en $\text{kg}$) rapportée à un paramètre de translation $\dot{x}(t)$ : 
 $$
-E_c(E/R_g)=\frac{1}{2}M_{\text{eq}}(E)\cdot \dot{x}^2.
+E_c(E/R_g)=\frac{1}{2}M_{\text{eq}}(E) \dot{x}^2.
 $$
 \end{itemize}
 \end{defi}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  26 DEC 2017 12:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  5 JAN 2018 14:05
 entering extended mode
 **./Cy_05_Ch_01_Energetique.tex
 (Cy_05_Ch_01_Energetique.tex
@@ -2983,6 +2983,8 @@ LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 121.
 LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
 (Font)              scaled to size 8.27998pt on input line 130.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 8.27998pt on input line 130.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 137.
@@ -2999,36 +3001,34 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 167.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 208.
+(mdframed)              on input line 215.
+Package mdframed Info: Not enough space on this page on input line 227.
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 220.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 227.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 220.
+(Font)              scaled to size 7.35999pt on input line 227.
 [2]
+Package mdframed Info: Not enough space on this page on input line 227.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 236.
+(mdframed)              on input line 243.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 254.
+(mdframed)              on input line 261.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 280.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 306.
-Package mdframed Info: Not enough space on this page on input line 314.
-<png/logo_lycee.png, id=103, 329.23pt x 265.99374pt>
+(mdframed)              on input line 287.
+<png/logo_lycee.png, id=102, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 314. on input l
-ine 314.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 305. on input l
+ine 305.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 3
-14.
+05.
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.35999pt on input line 314.
+(Font)              scaled to size 7.35999pt on input line 305.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 314.
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 305.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3037,57 +3037,60 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 314.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 305.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 314.
+(Font)              scaled to size 11.03998pt on input line 305.
 [3 <./png/logo_lycee.png>]
-Package mdframed Info: Not enough space on this page on input line 314.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 320.
+(mdframed)              on input line 313.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 327.
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 328--329
 
  []
 
-<images/ressort.pdf, id=113, pagebox=cropbox, 240.67944pt x 196.24097pt>
+<images/ressort.pdf, id=112, pagebox=cropbox, 240.67944pt x 196.24097pt>
 File: images/ressort.pdf Graphic file (type pdf)
 <use images/ressort.pdf>
-Package pdftex.def Info: images/ressort.pdf  used on input line 333. on input l
-ine 333.
+Package pdftex.def Info: images/ressort.pdf  used on input line 340. on input l
+ine 340.
 Package pdftex.def Info: Requested size: 140.91049pt x 114.8948pt on input line
- 333.
+ 340.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 342.
+(mdframed)              on input line 349.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 353.
+(mdframed)              on input line 360.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 363.
+(mdframed)              on input line 370.
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 384.
+(mdframed)              on input line 391.
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <7> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 388.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 395.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 6.43999pt on input line 388.
+(Font)              scaled to size 6.43999pt on input line 395.
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <5> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 388.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 395.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 4.59999pt on input line 388.
+(Font)              scaled to size 4.59999pt on input line 395.
+Package mdframed Info: Not enough space on this page on input line 404.
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 397. on input l
-ine 397.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 3
-97.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 404. on input l
+ine 404.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 4
+04.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
@@ -3095,23 +3098,22 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4 <./images/ressort.pdf>]
+Package mdframed Info: Not enough space on this page on input line 404.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 404.
+(mdframed)              on input line 411.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 419.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 8.27998pt on input line 437.
+(mdframed)              on input line 426.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 451.
+(mdframed)              on input line 458.
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 463. on input l
-ine 463.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 470. on input l
+ine 470.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 4
-63.
+70.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3122,19 +3124,19 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [5]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 465.
+(mdframed)              on input line 472.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 477.
+(mdframed)              on input line 484.
 \tf@ptc=\write7
 \openout7 = `Cy_05_Ch_01_Energetique.ptc'.
 
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 489. on input l
-ine 489.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 496. on input l
+ine 496.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 4
-89.
+96.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3143,11 +3145,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 489.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 489.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
  (Cy_05_Ch_01_Energetique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 489.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 489.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 496.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3155,16 +3157,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package logreq Info: Writing requests to 'Cy_05_Ch_01_Energetique.run.xml'.
 \openout1 = `Cy_05_Ch_01_Energetique.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 489.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
  ) 
 Here is how much of TeX's memory you used:
- 54196 strings out of 493352
- 1137454 string characters out of 3139710
- 1827954 words of memory out of 3000000
- 56572 multiletter control sequences out of 15000+200000
- 835564 words of font info for 384 fonts, out of 3000000 for 9000
+ 54192 strings out of 493352
+ 1137376 string characters out of 3139710
+ 1828904 words of memory out of 3000000
+ 56570 multiletter control sequences out of 15000+200000
+ 835406 words of font info for 383 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 57i,17n,98p,10470b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,21n,98p,10470b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}{C:/Program Fil
 es/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Enseignement/Livre_Exo_Vuibert/In
 stallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Ensei
@@ -3180,7 +3182,7 @@ e/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 gram Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Program Files/MiK
 TeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
 /type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_05_Ch_01_Energetique.pdf (6 pages, 1442511 bytes).
+Output written on Cy_05_Ch_01_Energetique.pdf (6 pages, 1443392 bytes).
 PDF statistics:
  314 PDF objects out of 1000 (max. 8388607)
  49 named destinations out of 1000 (max. 500000)
