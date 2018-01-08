@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  5 JAN 2018 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  8 JAN 2018 09:59
 entering extended mode
 **./Cy_05_Ch_01_Energetique.tex
 (Cy_05_Ch_01_Energetique.tex
@@ -2878,8 +2878,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--63
 
 Package mdframed Info: mdframed inside a box 
  mdframed uses option nobreak mdframed on input line 64.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 9.19998pt on input line 72.
 \c@ttl@toc@default=\count518
 (Cy_05_Ch_01_Energetique.ptc
 LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10> not available
@@ -3128,15 +3126,17 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 484.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 9.19998pt on input line 495.
 \tf@ptc=\write7
 \openout7 = `Cy_05_Ch_01_Energetique.ptc'.
 
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 496. on input l
-ine 496.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 499. on input l
+ine 499.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 4
-96.
+99.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -3145,11 +3145,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 496.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 496.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 499.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 499.
  (Cy_05_Ch_01_Energetique.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 496.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 496.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 499.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 499.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -3157,13 +3157,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package logreq Info: Writing requests to 'Cy_05_Ch_01_Energetique.run.xml'.
 \openout1 = `Cy_05_Ch_01_Energetique.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 496.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 499.
  ) 
 Here is how much of TeX's memory you used:
- 54192 strings out of 493352
- 1137376 string characters out of 3139710
- 1828904 words of memory out of 3000000
- 56570 multiletter control sequences out of 15000+200000
+ 54195 strings out of 493352
+ 1137401 string characters out of 3139710
+ 1828883 words of memory out of 3000000
+ 56571 multiletter control sequences out of 15000+200000
  835406 words of font info for 383 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  57i,21n,98p,10470b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -3173,18 +3173,19 @@ stallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Ensei
 gnement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/
 mdput/md-utr7v.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/t
 exmf/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Enseignement/Livre_Exo_Vuibe
-rt/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adob
-e/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_05_Ch_01_Energetique.pdf (6 pages, 1443392 bytes).
+rt/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr8t.pfb><C:/
+Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathde
+sign/mdput/md-utri7m.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/
+putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/adobe/utopia/putri8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw
+/avantgar/uagd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk
+8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on Cy_05_Ch_01_Energetique.pdf (6 pages, 1446787 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 49 named destinations out of 1000 (max. 500000)
+ 320 PDF objects out of 1000 (max. 8388607)
+ 51 named destinations out of 1000 (max. 500000)
  101065 words of extra memory for PDF output out of 106986 (max. 10000000)
 
