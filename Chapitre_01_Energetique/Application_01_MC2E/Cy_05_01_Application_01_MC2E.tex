@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -190,15 +190,27 @@ L’équation de mouvement est définie par l’équation différentielle suivan
 \subsection*{Travail demandé}
 
 
-\subparagraph{}\textit{Déterminer la relation entre $v(t)$ et $\omega_m(t)$. Sous hypothèse de conditions initiales nulles, en déduire la relation entre $s(t)$ et $\theta_m(t)$.}
+\subparagraph{}\textit{Déterminer la relation entre $v(t)$ et $\omega_m(t)$. Sous hypothèse de conditions initiales nulles, en déduire la relation entre $z(t)$ et $\theta_m(t)$.}
+\ifprof
+\begin{corrige} ~\\
+On a $\omega_i(t) = r\omega_m(t)$. De plus $\dfrac{\omega_e(t)}{\omega_i(t)}=\dfrac{R_i}{R_e} \Longleftrightarrow \omega_e(t)=\dfrac{R_i}{R_e}\omega_i(t)$ et donc :
+$\omega_e(t)=\dfrac{R_i}{R_e}r\omega_m(t)$.
+
+Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions initiales étant nulles, $z(t)=R_g r \dfrac{R_i}{R_e}\theta_m(t)$. 
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}\textit{Réaliser le graphe de structure associé à la translation de la pince.}
 \ifprof
 \begin{corrige} ~\\
 \end{corrige}
 \else
 \fi
 
-
-\subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble en mouvement par rapport à (0). Définir l’inertie équivalente $J$ ramenée sur l’axe du moteur M4 en fonction, notamment, des moments d’inertie, de $m_4$ et des données géométriques.}
+\subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble en mouvement par rapport à \textbf{(0)}. Définir l’inertie équivalente $J$ ramenée sur l’axe du moteur M4 en fonction, notamment, des moments d’inertie, de $m_4$ et des données géométriques.}
 \ifprof
 \begin{corrige} ~\\
 \end{corrige}
