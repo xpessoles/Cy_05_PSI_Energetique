@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -140,7 +140,8 @@ Modéliser l’équation de mouvement et la caractériser en fonction des action
 
 
 %On rappelle que la transmission d’effort est représentée sur l’annexe 5. Un schéma cinématique simplifié minimal de cet axe pour cette étude est proposé en annexe 6. 
-
+\ifprof
+\else
 \textbf{Hypothèses}
 \begin{itemize}
 \item La compensation de la pesanteur est parfaitement réalisée (système non étudié dans le cadre de cet exercice). On ne tiendra pas compte des actions mécaniques dues à la pesanteur par la suite.
@@ -184,7 +185,7 @@ L’équation de mouvement est définie par l’équation différentielle suivan
 \item $C_e(t)$, couple regroupant l’ensemble des couples extérieurs ramenés à l’arbre moteur, notamment fonction de la raideur du ressort.
 \end{itemize}
 
-
+\fi
 
 
 \subsection*{Travail demandé}
@@ -206,7 +207,7 @@ Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions
 \ifprof
 \begin{corrige} ~\\
 \begin{center}
-\includegraphics[width=.7\linewidth]{images/fig_07}
+\includegraphics[width=.6\linewidth]{images/fig_07}
 %\textit{}
 \end{center}
 
@@ -278,10 +279,10 @@ Toutes les liaisons étant supposées parfaites, $\mathcal{P}_{\text{int}}\left(
 \ifprof
 \begin{corrige} ~\\
 En appliquant le théorème de l'énergie cinétique on a : 
-$$
+$
 J\dot{\omega_m}(t)\omega_m(t) = -kz(t)R_g r \dfrac{R_i}{R_e}\omega_m(t)+C_m\omega_m(t) \Rightarrow 
 J\dot{\omega}_m(t) = -k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t) +C_m.
-$$
+$
 
 En utilisant l'équation différentielle du mouvement on a alors : 
 $C_e(t) = k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t)$.
@@ -323,11 +324,13 @@ $\mathcal{P}_{\text{int}}\left(E\right)=0$.
 %%\textit{}
 %\end{center}
 
-
+\ifprof
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_04}
 %\textit{}
 \end{center}
+\fi
 
 \end{document}
 
