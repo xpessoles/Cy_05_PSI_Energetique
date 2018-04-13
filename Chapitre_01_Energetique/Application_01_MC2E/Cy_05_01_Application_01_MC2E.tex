@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -92,10 +92,10 @@ Chapitre 1 -- \xxactivite%
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-%\ifprof
-%\else
+\ifprof
+\else
 \begin{multicols}{2}
-%\fi
+\fi
 \section*{Mise en situation}
 
 \ifprof
@@ -143,7 +143,7 @@ Modéliser l’équation de mouvement et la caractériser en fonction des action
 
 \textbf{Hypothèses}
 \begin{itemize}
-\item La compensation de la pesanteur est parfaitement réalisée. On ne tiendra pas compte des actions mécaniques dues à la pesanteur par la suite.
+\item La compensation de la pesanteur est parfaitement réalisée (système non étudié dans le cadre de cet exercice). On ne tiendra pas compte des actions mécaniques dues à la pesanteur par la suite.
 \item Les axes de rotation du $\text{MC}^2\text{E}$ sont asservis en position. En conséquence, les repères liés aux solides \textbf{(1)}, \textbf{(2)} et \textbf{(3)} seront supposés fixes par rapport au repère lié au bâti \textbf{(0)} dont le repère associé est supposé galiléen.
 \item L’instrument chirurgical est vertical.
 \item Toutes les courroies sont inextensibles et il n’y a pas de glissement entre les galets et les courroies.
@@ -202,10 +202,14 @@ Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions
 \fi
 
 
-
 \subparagraph{}\textit{Réaliser le graphe de structure associé à la translation de la pince.}
 \ifprof
 \begin{corrige} ~\\
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_07}
+%\textit{}
+\end{center}
+
 \end{corrige}
 \else
 \fi
@@ -213,6 +217,37 @@ Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions
 \subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble en mouvement par rapport à \textbf{(0)}. Définir l’inertie équivalente $J$ ramenée sur l’axe du moteur M4 en fonction, notamment, des moments d’inertie, de $m_4$ et des données géométriques.}
 \ifprof
 \begin{corrige} ~\\
+
+Tous les solides sont en mouvement << simples >> par rapport au référentiel galiléen. 
+On a : 
+$$
+\mathcal{E}_c\left(E/\mathcal{R}_g\right) =
+\dfrac{1}{2}I_m\omega_m(t)^2
++\dfrac{1}{2}\left(I_r+I_i\right)\omega_i(t)^2
++\dfrac{1}{2}\left(I_e+2I_p+6I_g\right)\omega_e(t)^2
++\dfrac{1}{2}m_4v(t)^2
+$$
+$$
+\mathcal{E}_c\left(E/\mathcal{R}_g\right) =
+\dfrac{1}{2}I_m\omega_m(t)^2
++\dfrac{1}{2}\left(I_r+I_i\right)\left( r\omega_m(t)\right)^2
++\dfrac{1}{2}\left(I_e+2I_p+6I_g\right)\left( \dfrac{R_i}{R_e}r\omega_m(t)\right)^2
++\dfrac{1}{2}m_4\left( R_g r \dfrac{R_i}{R_e}\omega_m(t) \right)^2
+$$
+
+$$
+\mathcal{E}_c\left(E/\mathcal{R}_g\right) =
+\dfrac{1}{2}\left(
+I_m
++\left(I_r+I_i\right)r^2
++\left(I_e+2I_p+6I_g\right)\left( \dfrac{R_i}{R_e}r\right)^2
++m_4\left( R_g r \dfrac{R_i}{R_e} \right)^2\right)\omega_m(t)^2
+$$
+
+On a donc $J=I_m
++\left(I_r+I_i\right)r^2
++\left(I_e+2I_p+6I_g\right)\left( \dfrac{R_i}{R_e}r\right)^2
++m_4\left( R_g r \dfrac{R_i}{R_e} \right)^2$.
 \end{corrige}
 \else
 \fi
@@ -221,6 +256,19 @@ Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions
 \subparagraph{}\textit{Effectuer un bilan des puissances extérieures et intérieures à ce même ensemble. Préciser l’expression analytique de chaque puissance.}
 \ifprof
 \begin{corrige} ~\\
+
+On isole l'ensemble. 
+
+\textbf{Bilan des puissances extérieures}
+\begin{itemize}
+\item Action du ressort : $\mathcal{P}\left(\text{ressort}\to 4/\mathcal{R}_g \right)=-kz(t)v(t)=-kz(t)R_g r \dfrac{R_i}{R_e}\omega_m(t)$.
+\item Action du moteur : $\mathcal{P}\left(\text{moteur}\to 4/\mathcal{R}_g \right)=C_m\omega_m(t)$.
+\item Action de la pesanteur : $\mathcal{P}\left(\text{pesanteur}\to E/\mathcal{R}_g \right)=0$ (La pesanteur est compensée par un système de compensation).
+\end{itemize}
+
+\textbf{Bilan des puissances intérieures}
+Toutes les liaisons étant supposées parfaites, $\mathcal{P}_{\text{int}}\left(E\right)=0$.
+
 \end{corrige}
 \else
 \fi
@@ -229,16 +277,37 @@ Enfin, $v(t)=R_g \omega_e(t) =R_g r \dfrac{R_i}{R_e}\omega_m(t)$. Les conditions
 \subparagraph{}\textit{Par l’application du théorème de l’énergie cinétique à l’ensemble en mouvement par rapport à \textbf{(0)}, déterminer l’expression du terme $C_e(t)$ en fonction des données du problème et de $\theta_m(t)$.}
 \ifprof
 \begin{corrige} ~\\
+En appliquant le théorème de l'énergie cinétique on a : 
+$$
+J\dot{\omega_m}(t)\omega_m(t) = -kz(t)R_g r \dfrac{R_i}{R_e}\omega_m(t)+C_m\omega_m(t) \Rightarrow 
+J\dot{\omega}_m(t) = -k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t) +C_m.
+$$
+
+En utilisant l'équation différentielle du mouvement on a alors : 
+$C_e(t) = k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t)$.
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
+\subsubsection*{Corrigé résumé}
+\begin{enumerate}
+\item $v(t)=R_g r \dfrac{R_i}{R_e}\omega_m(t)$ et $z(t)=R_g r \dfrac{R_i}{R_e}\theta_m(t)$. 
+\item .
+\item $J=I_m+\left(I_r+I_i\right)r^2 +\left(I_e+2I_p+6I_g\right)\left( \dfrac{R_i}{R_e}r\right)^2 +m_4\left( R_g r \dfrac{R_i}{R_e} \right)^2$.
 
+\item $\mathcal{P}\left(\text{res}\to 4/\mathcal{R}_g \right)=-kz(t) \dfrac{R_g rR_i}{R_e}\omega_m(t)$, $\mathcal{P}\left(\text{mot}\to 4/\mathcal{R}_g \right)=C_m\omega_m(t)$, $\mathcal{P}\left(\text{pes}\to E/\mathcal{R}_g \right)=0$ et
+$\mathcal{P}_{\text{int}}\left(E\right)=0$.
+%\item $J\dot{\omega}_m(t) = -k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t) +C_m$.
+\item $C_e(t) = k \left(R_g r \dfrac{R_i}{R_e}\right)^2\theta_m(t)$.
+\end{enumerate}
+\fi
 
-%\ifprof
-%\else
+\ifprof
+\else
 \end{multicols}
-%\fi
+\fi
 
 %\ifprof
 %\else
