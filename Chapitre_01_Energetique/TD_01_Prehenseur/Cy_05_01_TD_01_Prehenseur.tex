@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -108,8 +108,13 @@ Le cahier des charges impose que la vitesse maximale du chariot sur l’axe $\ve
 \end{obj}
 
 \subsection*{Travail demandé}
+La transmission est réalisée de la façon suivante. 
 
-\textbf{Notations}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05}
+\end{center}
+
+\noindent\textbf{Notations}
 \begin{itemize}
 \item $\Omega$ : vitesse de rotation du moteur;
 \item $r=n_{\text{axe poulie}}/n_{\text{moteur}}=\dfrac{1}{10}$: rapport de réduction du réducteur entre le moteur et les poulies;
@@ -125,21 +130,50 @@ Le cahier des charges impose que la vitesse maximale du chariot sur l’axe $\ve
 \subparagraph{}\textit{Déterminer la vitesse maximale de rotation du moteur $\Omega_{\text{max}}$. Faire l’application numérique.}
 \ifprof
 \begin{corrige}~\\
+On a $V_{\text{max}}=\Omega_{\text{max}}\cdot r \cdot \dfrac{\phi}{2}$. En conséquence 
+$\Omega_{\text{max}}=V_{\text{max}}\dfrac{2}{r \phi}$. 
+
+\textit{Application numérique :} $\Omega_{\text{max}}=\dfrac{2\cdot 0,45 \cdot 10}{28,65\times 10^{-3}}\simeq\SI{314}{rad.s^{-1}}\simeq\SI{3000}{tr.min^{-1}}$.
+
 \end{corrige}
 \else
 \fi
 
-\subparagraph{}\textit{Déterminer l’accélération maximale du moteur $\Omega_{\text{max}}$. Faire l’application numérique.}
+\subparagraph{}\textit{Déterminer l’accélération maximale du moteur $\dot{\Omega}_{\text{max}}$. Faire l’application numérique.}
 \ifprof
 \begin{corrige}~\\
+En suivant un raisonnement similaire : 
+$\dot{\Omega}_{\text{max}}=\gamma_{\text{max}}\dfrac{2}{r \phi}$. 
+
+
+\textit{Application numérique : } $\dot{\Omega}_{\text{max}}=\dfrac{10\cdot 2\cdot 10}{ 28,65\times 10^{-3}}\simeq \SI{6981}{rad.s^{-2}}$. 
+
+
 \end{corrige}
 \else
 \fi
 
 
-\subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble mobile dans son mouvement le long de l’axe $\vect{x}$ par rapport au bâti notée $\mathcal{E}\left(\text{ensemble}/0\right)$. En déduire l’inertie équivalente $J$ de l’ensemble mobile rapportée à l’arbre du moteur. Faire l’application numérique.}
+\subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble mobile dans son mouvement le long de l’axe $\vect{x}$ par rapport au bâti notée $\mathcal{E}_c\left(\text{ensemble}/0\right)$. En déduire l’inertie équivalente $J$ de l’ensemble mobile rapportée à l’arbre du moteur. Faire l’application numérique.}
 \ifprof
 \begin{corrige}~\\
+Le système peut être modélisé ainsi :
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/cor_01}
+\end{center}
+
+$\mathcal{E}_c\left(\text{ensemble}/0\right) = \mathcal{E}_c\left(1/0\right)+\mathcal{E}_c\left(2/0\right)$. Le solide 1 et l'arbre moteur sont en rotation par rapport au bâti et le solide 2 est en translation par rapport au bâti, on a donc : 
+\begin{itemize}
+\item $\mathcal{E}_c\left(1/0\right) = \dfrac{1}{2}\left( J_m \Omega^2 + J_1 \left(r\Omega\right)^2\right)= \dfrac{1}{2}\left( J_m  + J_1 r^2\right)\Omega^2$
+\item $\mathcal{E}_c\left(2/0\right) = \dfrac{1}{2} M V^2 = \dfrac{1}{2} M \Omega^2  \left(\dfrac{r\phi}{2}\right)^2$.
+\end{itemize}
+
+$\mathcal{E}_c\left(\text{ensemble}/0\right) = \dfrac{1}{2}\left(\left( J_m  + J_1 r^2\right)+   M \left(\dfrac{r\phi}{2}\right)^2\right)\Omega^2  $.
+
+
+\textit{Application numérique : }
+$J_{eq}=\left( J_m  + J_1 r^2\right)+   M \left(\dfrac{r\phi}{2}\right)^2 =5,9\times 10^{-5} \, \text{kg m}^2$.
 \end{corrige}
 \else
 \fi
