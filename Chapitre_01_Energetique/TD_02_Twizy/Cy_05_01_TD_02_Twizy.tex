@@ -44,8 +44,8 @@
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Système de dépose de poudre}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec -- TSI 2016}}
+\def\xxtitreexo{Renault Twizy}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Mines Ponts -- PSI 2017}}
 
 
 \def\xxcompetences{%
@@ -93,92 +93,47 @@ Chapitre 1 -- \xxactivite%
 \section*{Mise en situation}
 \ifprof
 \else
-On s'intéresse à un système permettant de créer des motifs sur de la poudre de maquillage compactée. Le poste de pulvérisation est en partie constitué d'un robot cartésien 3 axes permettant de déplacer des godets de poudre compactée (grâce à un préhenseur) en dessous de la buse de pulvérisation. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_02}
+%\includegraphics[width=\linewidth]{images/fig_02}
 \end{center}
 
 \fi
 
-\begin{obj}
-L’objectif est de valider le choix du moteur effectué par le concepteur du système.
+\subsection*{Choix du motoréducteur}
 
-Le cahier des charges impose que la vitesse maximale du chariot sur l’axe $\vect{x}$ soit de $V_{\text{max}}= \SI{0,45}{m.s^{-1}}$ et que l’accélération maximale du chariot soit de $\gamma_{\text{max}}= \SI{10}{m.s^{-2}}$.
+\subsubsection*{Validation du choix constructeur du moto-réducteur}
+\begin{obj}
+Mettre en place un modèle permettant de choisir un ensemble moto-réducteur afin d’obtenir les
+exigences d’accélération et de vitesse.
 \end{obj}
 
-\subsection*{Travail demandé}
-La transmission est réalisée de la façon suivante. 
+***L’Annexe 4 donne le paramétrage et les données nécessaires pour cette modélisation.
 
-\begin{center}
-\includegraphics[width=\linewidth]{images/fig_05}
-\end{center}
 
-\noindent\textbf{Notations}
+3.1 Choix de l’ensemble moto-réducteur
+3.1.1 Equation de mouvement du véhicule
+\begin{obj}
+Objectif : Déterminer l’équation de mouvement nécessaire pour choisir l’ensemble moto-réducteur.
+\end{obj}
+
+\textbf{Notations :}
 \begin{itemize}
-\item $\Omega$ : vitesse de rotation du moteur;
-\item $r=n_{\text{axe poulie}}/n_{\text{moteur}}=\dfrac{1}{10}$: rapport de réduction du réducteur entre le moteur et les poulies;
-\item $M_2 = \SI{25}{kg}$ : masse de l’ensemble mobile 2;
-\item $\phi = \SI{28,65}{mm}$ est le diamètre primitif des poulies;
-\item l’inertie des courroies est négligée;
-\item $J_m = \SI{1,2e-5}{kg.m^2}$ : moment d’inertie de l’arbre moteur;
-\item $J_1 = \SI{4e-4}{kg.m^2}$ : moment d’inertie de l’arbre 1;
-\item $C_r = \SI{0,15}{Nm}$ : couple de frottements secs dans les liaisons ramené à l’arbre moteur;
-\item $\mu = \SI{0,001}{N.m.s.rad^{-1}}$ : coefficient de frottements visqueux dans les liaisons ramené à l’arbre moteur.
+\item puissance extérieure des actions mécaniques du solide $i$ sur le solide $j$ dans le mouvement de $i$ par rapport à 0 : $\mathcal{P}\left( i \to j / 0\right)$;
+\item puissance intérieure des actions mécaniques entre le solide $i$ et le solide $j$: $\mathcal{P}\left( i \leftrightarrow j\right)$ ;
+\item énergie cinétique du solide $i$ dans son mouvement par rapport à 0 : $\mathcal{E}_c\left(i/0\right)$.
 \end{itemize}
 
-\subparagraph{}\textit{Déterminer la vitesse maximale de rotation du moteur $\Omega_{\text{max}}$. Faire l’application numérique.}
-\ifprof
-\begin{corrige}~\\
-On a $V_{\text{max}}=\Omega_{\text{max}}\cdot r \cdot \dfrac{\phi}{2}$. En conséquence 
-$\Omega_{\text{max}}=V_{\text{max}}\dfrac{2}{r \phi}$. 
-
-\textit{Application numérique :} $\Omega_{\text{max}}=\dfrac{2\cdot 0,45 \cdot 10}{28,65\times 10^{-3}}\simeq\SI{314}{rad.s^{-1}}\simeq\SI{3000}{tr.min^{-1}}$.
-
-\end{corrige}
-\else
-\fi
-
-\subparagraph{}\textit{Déterminer l’accélération maximale du moteur $\dot{\Omega}_{\text{max}}$. Faire l’application numérique.}
-\ifprof
-\begin{corrige}~\\
-En suivant un raisonnement similaire : 
-$\dot{\Omega}_{\text{max}}=\gamma_{\text{max}}\dfrac{2}{r \phi}$. 
-
-
-\textit{Application numérique : } $\dot{\Omega}_{\text{max}}=\dfrac{10\cdot 2\cdot 10}{ 28,65\times 10^{-3}}\simeq \SI{6981}{rad.s^{-2}}$. 
-
-
-\end{corrige}
-\else
-\fi
-
-
-\subparagraph{}\textit{Donner l’expression de l’énergie cinétique de l’ensemble mobile dans son mouvement le long de l’axe $\vect{x}$ par rapport au bâti notée $\mathcal{E}_c\left(\text{ensemble}/0\right)$. En déduire l’inertie équivalente $J$ de l’ensemble mobile rapportée à l’arbre du moteur. Faire l’application numérique.}
-\ifprof
-\begin{corrige}~\\
-Le système peut être modélisé ainsi :
-
-\begin{center}
-\includegraphics[width=.7\linewidth]{images/cor_01}
-\end{center}
-
-$\mathcal{E}_c\left(\text{ensemble}/0\right) = \mathcal{E}_c\left(1/0\right)+\mathcal{E}_c\left(2/0\right)$. Le solide 1 et l'arbre moteur sont en rotation par rapport au bâti et le solide 2 est en translation par rapport au bâti, on a donc : 
+\subparagraph{}\textit{Rédiger les réponses aux questions suivantes dans le cadre prévu à cet effet du document réponse :
 \begin{itemize}
-\item $\mathcal{E}_c\left(1/0\right) = \dfrac{1}{2}\left( J_m \Omega^2 + J_1 \left(r\Omega\right)^2\right)= \dfrac{1}{2}\left( J_m  + J_1 r^2\right)\Omega^2$
-\item $\mathcal{E}_c\left(2/0\right) = \dfrac{1}{2} M V^2 = \dfrac{1}{2} M \Omega^2  \left(\dfrac{r\phi}{2}\right)^2$.
+\item écrire la forme générale du théorème de l’énergie puissance appliqué au véhicule en identifiant les différentes puissances exterieures, les différentes puissances intérieures et les énergies cinétiques des différents éléments mobiles en respectant les notations précédentes ;
+\item déterminer explicitement les différentes puissances extérieures ;
+\item déterminer explicitement les différentes puissances intérieures ;
+\item déterminer explicitement les énergies cinétiques ;
+\item en déduire une équation faisant intervenir $C_m$, $N_1$, $N_2$, $v$, $\omega_m$, $\omega_{1/0}$, $\omega_{2/0}$ …… ;
+\item expliquer pourquoi l’équation obtenue n’est pas l’équation de mouvement du véhicule.
 \end{itemize}
-
-$\mathcal{E}_c\left(\text{ensemble}/0\right) = \dfrac{1}{2}\left(\left( J_m  + J_1 r^2\right)+   M \left(\dfrac{r\phi}{2}\right)^2\right)\Omega^2  $.
-
-
-\textit{Application numérique : }
-$J_{eq}=\left( J_m  + J_1 r^2\right)+   M \left(\dfrac{r\phi}{2}\right)^2 =5,9\times 10^{-5} \, \text{kg m}^2$.
-\end{corrige}
-\else
-\fi
-
-\subparagraph{}\textit{Établir l’expression du couple moteur maximal exercé par le moteur sur l’arbre moteur noté $C_{\text{max}}$. Faire l’application numérique.}
+}
 \ifprof
 \begin{corrige}~\\
 \end{corrige}
@@ -186,21 +141,67 @@ $J_{eq}=\left( J_m  + J_1 r^2\right)+   M \left(\dfrac{r\phi}{2}\right)^2 =5,9\t
 \fi
 
 
-\subparagraph{}\textit{Donner l’expression de la puissance mécanique maximale que devra fournir le moteur électrique. Faire l’application numérique.}
+
+
+
+\subsubsection*{Validation du choix constructeur du moto-réducteur}
+\begin{obj}
+Valider le choix du moto-réducteur fait par le constructeur.
+\end{obj}
+
+
+
+\subparagraph{}\textit{À partir de la vue 3D du réducteur choisi par le constructeur, fourni en *** Annexe 5, compléter le schéma cinématique du document réponse, calculer son rapport de transmission $r = \dfrac{\omega_{4/3}}{\omega_{4/3}}$ et conclure.}
 \ifprof
 \begin{corrige}~\\
 \end{corrige}
 \else
 \fi
 
-Le concepteur du système a choisi un moteur synchrone de vitesse nominale de $\SI{3000}{tr.min^{-1}}$ et de puissance utile $\SI{0,47}{kW}$.
-
-\subparagraph{}\textit{Valider le choix du moteur en le justifiant. Argumenter la présence éventuelle d’écart entre la puissance mécanique maximale calculée et la puissance nominale du moteur choisi.}
+\subparagraph{}\textit{}
 \ifprof
 \begin{corrige}~\\
 \end{corrige}
 \else
 \fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_05}
+\end{center}
 
 
 
