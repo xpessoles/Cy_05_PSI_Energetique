@@ -1,0 +1,322 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Résolutions de problèmes de statique : PFS 3D},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat}
+\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique 3D}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Stat}}
+
+\def\xxactivite{TD 02}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Quille pendulaire}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2014}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+\includegraphics[width=.75\textwidth]{images/fig_00}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision statique -- Résolution des problèmes de statique plane\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+%\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+
+\section*{Mise en situation}
+\ifprof
+\else
+
+Les actions de l'air et de l'eau permettent au voilier d'avancer mais provoquent aussi son inclinaison autour de l'axe longitudinal $\vect{z_N}$. C’est le phénomène de gîte. Pour contrebalancer ce mouvement et éviter que le voilier ne se couche sur l’eau, la quille joue le rôle de contrepoids. 
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_01}
+%\textit{}
+\end{center}
+
+Une évolution récente des voiliers de course océanique a été de les doter d’une quille pendulaire. Cette quille est en liaison pivot d’axe $\left(O,\vect{z}_N \right)$ avec la coque du navire et peut être orientée d’un côté ou de l’autre du navire. Une fois l’orientation désirée obtenue, tout mouvement dans la liaison pivot est supprimé par le blocage en rotation de celle-ci. 
+%Cette quille est généralement constituée d’un voile immergé dans l’eau à l’extrémité duquel se trouve un lest profilé. L’efficacité de la quille dépend de la masse du lest et de la longueur du voile. Ces deux paramètres présentent des limitations : le lest ne peut être trop important sous peine de solliciter dangereusement le voile de quille et la longueur de quille est limitée par le tirant d’eau maximal admissible (il faut permettre l’entrée dans les ports sans toucher le fond !).
+
+
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{images/fig_02}
+%%\textit{}
+%\end{center}
+
+
+\fi
+\begin{obj}
+L’objectif est de déterminer la puissance utile au déplacement de la quille et de la comparer à celle installée
+par le constructeur.
+\end{obj}
+
+\ifprof
+\else
+%
+%\begin{center}
+%\includegraphics[width=.95\linewidth]{images/Exigences}
+%%\textit{}
+%\end{center}
+\fi
+\subsection*{Travail à réaliser}
+\ifprof
+\else
+
+Le modèle de calcul est donné dans les figures suivantes.
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_03}
+
+\textit{Modèle volumique 3D}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_05_a}
+
+\textit{Modèle 2D}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05_b}
+
+\textit{Paramétrage}
+\end{center}
+
+
+\textbf{Hypothèses}
+
+\begin{itemize}
+\item Les liaisons sont toutes parfaites.
+\item Le bateau est à l’arrêt et son repère $R_N$ est galiléen.
+\item Lors de la commande de basculement de la quille, les vérins sont alimentés de telle sorte que : $F_{h2} > 0$ et
+$F_{h3} = 0$. Le vérin 2--4 est alors moteur et le vérin 3--5 est libre ($F_{h2}$ désigne l'action hydraulique sur la tige du vérin 2; on a donc $-F_{h2}$ qui agit sur 4).
+\item Le mouvement du fluide dans les diverses canalisations s’accompagne d’un phénomène de frottement visqueux défini. L’eau exerce sur le voile de quille une action hydrodynamique.
+%\item Seul le vérin 2--4 est moteur ($F_{h3}=0$). Le fluide (pression hydraulique) agit simultanément sur les pièces 2 et 4. L’action du fluide sur 2 est donnée par 
+%$\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
+%\item Les actions mécaniques de frottement visqueux provenant du déplacement du fluide dans les canalisations sont toutes négligées.% ($k=0$).
+%\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
+%%\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
+%\item Les poids des éléments constitutifs des deux vérins sont négligés.
+%\item La variation de $\theta_2$ pour toute l’amplitude du mouvement de relevage de la quille est faible; $\theta_2$ sera pris égal à 0 : les bases $\mathcal{B}_2$, $\mathcal{B}_4$ et $\mathcal{B}_N$ sont donc confondues. Cependant l’angle $\theta_1$ est différent de zéro.
+%\item Les conditions de déplacement rendent négligeables les effets dynamiques. Les théorèmes de la statique seront donc utilisés dans la suite.
+\end{itemize}
+
+%
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_04}
+%
+%%\vspace{-.2cm}
+%
+%$\vect{OA}=R\vect{y_1}$, 
+%$\theta_1 =\angl{x_N}{x_1}$,
+%$\vect{OG_1}=-L_1\vect{y_1}$,
+%$\vect{AA_2}=-d\vect{z_N}$
+%$\vect{AA_3}=d\vect{z_N} $.
+%
+%%\vspace{-.8cm}
+%
+%\textit{Schéma cinématique 3D}
+%\end{center}
+
+\subsection*{Vecteurs vitesse}
+
+\subparagraph{}\textit{Tracer le graphe de liaisons.}
+
+
+\subparagraph{}\textit{
+Exprimer les vitesses suivantes :
+\begin{enumerate}
+\item $\vectv{G_1}{1}{N}$ en fonction de $\dfrac{\dd \theta_1(t)}{\dd t}$ et des paramètres géométriques utiles;
+\item $\vectv{G_2}{2}{N}$ en fonction de $\dfrac{\dd \theta_2(t)}{\dd t}$, $\dfrac{\dd x_{24}(t)}{\dd t}$, $x_{24}$ et des paramètres géométriques utiles;
+\item $\vectv{G_3}{3}{N}$ en fonction de $\dfrac{\dd \theta_3(t)}{\dd t}$, $\dfrac{\dd x_{35}(t)}{\dd t}$, $x_{35}$ et des paramètres géométriques utiles;
+\item $\vectv{A}{2}{4}$ en fonction de  $\dfrac{\dd x_{24}(t)}{\dd t}$.
+\end{enumerate}}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+\subsection*{Energie cinétique}
+Soit $E$ l’ensemble constitué des solides 1, 2, 3, 4 et 5.
+
+On note $\ec{i}{N}$ l'énergie cinétique de $i$ dans son mouvement par rapport au référentiel galiléen $R_N$.
+
+\subparagraph{}\textit{
+Exprimer les énergies cinétiques suivantes : 
+\begin{enumerate}
+\item $\ec{1}{N}$, en fonction de
+$\dfrac{\dd \theta_1(t)}{\dd t}$  et des paramètres inertiels et géométriques utiles;
+\item $\ec{2}{N}$, en fonction de
+$\dfrac{\dd \theta_2(t)}{\dd t}$ , $\dfrac{\dd x_{24}(t)}{\dd t}$ , $x_{24}(t)$ et des paramètres inertiels et géométriques utiles.
+\item $\ec{4}{N}$, en fonction de $\dfrac{\dd \theta_1(t)}{\dd t}$ et des paramètres inertiels et géométriques utiles.
+\end{enumerate}}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Evaluation des puissances développées par les actions mécaniques intérieures à E}
+\subparagraph{}\textit{Recenser, puis exprimer les puissances non nulles (notées $\pint{i}{j}$) développées par les actions mécaniques intérieures à $E$ en fonction du (ou des) paramètre(s) propre(s) à la liaison ou au mouvement concerné.}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Evaluation des puissances développées par les actions mécaniques extérieures à E}
+\subparagraph{}\textit{Recenser, puis exprimer les puissances galiliéennes non nulles (notées $\pext{i}{j}{k}$) développées par les actions mécaniques extérieures à $E$. Chaque puissance sera exprimée à l’aide du (ou des)
+paramètre(s) propre(s) à la liaison ou au mouvement concerné.}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Appliquer le théorème de l’énergie-puissance à $E$ dans son mouvement par rapport à $N$. Ecrire ce
+théorème de façon globale en utilisant uniquement les notations précédentes, sans leur
+développement. Exprimer dans ces conditions la puissance motrice que fournit le vérin moteur en
+fonction du reste : équation (1).}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+
+On se place dans le cas où une commande en vitesse est générée à destination du vérin [2, 4]. Le vérin [3, 5]
+est libre. Cette commande <<~en trapèze de vitesse~>>  provoque le déplacement de la quille de la position $\theta_1=0$
+ à la position $\theta_1 = 45\degres$ en 4 secondes, le maintien de la quille dans cette position pendant 1 seconde puis le
+ retour à la position $\theta_1=0$ en 4 secondes. Les phases d’accélération et de décélération (rampes) durent 1 seconde.
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_06}
+%\textit{Paramétrage}
+\end{center}
+
+Un logiciel de calcul permet de tracer l’évolution temporelle des puissances mises en jeu. Ces puissances sont
+représentées sur la figure suivante. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_07}
+%\textit{Paramétrage}
+\end{center}
+
+
+
+\subparagraph{}\textit{Dans le but de chiffrer la valeur maximale de la puissance que doit fournir l’actionneur pour réaliser
+le mouvement prévu, tracer, à l’aide de l’« Annexe 2 », sur la figure R4 de la copie, l’allure de
+l’évolution temporelle de cette puissance. Pour cela, évaluer les valeurs aux instants $t=\SI{0}{s}$, $t=\SI{1}{s}$,
+$t=\SI{3}{s}$ et $t=\SI{4}{s}$.
+Sur cet intervalle $[0,\SI{4}{s}]$, évaluer, en kW, la valeur maximale de la puissance que doit fournir
+l’actionneur. Expliquer pourquoi le maximum de puissance est situé sur cet intervalle.}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+\subparagraph{}\textit{
+Le constructeur indique une puissance motrice installée sur son bateau de \SI{30}{kW}.
+Dans les hypothèses utilisées pour constituer le modèle de calcul, indiquer ce qui peut expliquer la
+différence entre la valeur calculée et la valeur installée.}
+\ifprof
+\begin{corrige}
+
+\end{corrige}
+\else
+\fi
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+
+\end{document}
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
